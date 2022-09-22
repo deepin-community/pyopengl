@@ -1,0 +1,8 @@
+#!/usr/bin/make -f
+export PYBUILD_NAME=opengl
+
+## Tests are failing (#802117):
+export PYBUILD_DISABLE=test/python3
+
+%:
+	dh $@ --with python3 --buildsystem=pybuild

@@ -1,0 +1,6 @@
+version=3
+
+opts=\
+dversionmangle=s/[~+]dfsg\d*//,\
+repacksuffix=+dfsg,\
+ http://pypi.python.org/packages/source/P/PyOpenGL/PyOpenGL-([\d\.]*)\.tar\.gz

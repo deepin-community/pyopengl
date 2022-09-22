@@ -1,0 +1,572 @@
+pyopengl (3.1.5+dfsg-1) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Ondřej Nový ]
+  * Convert git repository from git-dpm to gbp layout
+  * Use debhelper-compat instead of debian/compat.
+
+  [ Picca Frédéric-Emmanuel ]
+  * New upstream version 3.1.5+dfsg
+  * d/patches
+    - Removed 0001-renamed-modules-async-async_-for-python3.7-like-fedo.patch
+      it was upstreamed.
+  * Added the salsa-ci.yml file
+  * Removed useless debian/gbp.conf
+  * Python2-rm (Closes: #937498)
+
+ -- Picca Frédéric-Emmanuel <picca@debian.org>  Sun, 12 Apr 2020 14:59:55 +0200
+
+pyopengl (3.1.0+dfsg-2) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Picca Frédéric-Emmanuel ]
+  * d/patches
+    + Added 0001-renamed-modules-async-async_-for-python3.7-like-fedo.patch
+    (Closes: #903218)
+
+  [ Ondřej Nový ]
+  * d/control: Set Vcs-* to salsa.debian.org
+  * d/copyright: Use https protocol in Format field
+  * d/control: Remove trailing whitespaces
+  * d/control: Remove ancient X-Python-Version field
+  * d/control: Remove ancient X-Python3-Version field
+
+ -- Picca Frédéric-Emmanuel <picca@debian.org>  Wed, 01 Aug 2018 10:39:40 +0200
+
+pyopengl (3.1.0+dfsg-1) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Ondřej Nový ]
+  * Fixed VCS URL (https)
+
+  [ Dmitry Smirnov ]
+  * New upstream release (Closes: #764514, #703585).
+  * Disabled tests (Closes: #802117).
+  * Added "debian/gbp.conf".
+  * watch/copyright: DFSG-repack to drop .dll files.
+
+ -- Dmitry Smirnov <onlyjob@debian.org>  Sat, 21 May 2016 18:09:55 +1000
+
+pyopengl (3.0.2-1) unstable; urgency=low
+
+  * Team upload
+  [ Jakub Wilk ]
+  * Use canonical URIs for Vcs-* fields.
+
+  [ Jackson Doak ]
+  * New upstream release
+  * debian/control:
+    - Bump debhelper version to 9
+    - Add X-Python-Version field
+  * debian/compat: Set as 9
+
+  [ Piotr Ożarowski ]
+  * Add python-ctypes to python-opengl's Depends
+
+  [ Roman Valov ]
+  * debian/rules:
+    - Switched to pybuild buildsystem.
+    - Update to build python2 and python3 packages.
+  * debian/control:
+    - Bump standards-version to 3.9.5
+    - Update to build python2 and python3 packages.
+
+ -- Andrew Shadura <andrewsh@debian.org>  Fri, 17 Jan 2014 19:41:43 +0100
+
+pyopengl (3.0.1-1) unstable; urgency=low
+
+  * Team upload.
+  * New upstream release (Closes: #527342)
+  * debian/watch
+    - Update to use PyPI
+  * debian/control, debian/rules
+    - Switched to dh_python2.
+    - Bumped standards version to 3.9.3, no changes necessary
+  * debian/preinst, debian/pycompat, debian/pyversions
+    - Drop files no longer necessary with switch to dh_python2.
+
+ -- Arthur de Jong <adejong@debian.org>  Sat, 10 Mar 2012 17:59:51 +0100
+
+pyopengl (3.0.1~b2-1) unstable; urgency=low
+
+  * New upstream release
+  * Converted to source format "3.0 (quilt)"
+  * debian/control
+    - Bumped standards version to 3.8.3, no changes necessary
+    - Build-depend on python instead of python-dev
+    - Drop build dependency on cdbs
+    - Drop dependency on python-ctypes, package has been removed
+  * debian/rules
+    - Switch to dh instead of cdbs
+
+ -- Torsten Marek <shlomme@debian.org>  Tue, 26 Jan 2010 20:34:51 +0100
+
+pyopengl (3.0.0~c1-1) unstable; urgency=low
+
+  * New upstream release (Closes: #498403)
+  * debian/compat
+    - bumped debhelper compatibility level to 7
+  * debian/control, debian/rules
+    - Switched to python-support
+    - bumped standards version to 3.8.1, no changes necessary
+    - removed python-opengl-doc, documentation is not distributed anymore
+      by upstream.
+    - removed build dependency on python-setuptools and run-time
+      dependency on python-pkg-resource, not needed anymore
+    - dropped build dependencies on all GL libraries, not needed anymore
+      because documentation is removed
+    - removed dependencies on dpatch
+  * debian/preinst
+    - make sure pycentral files are removed properly
+  * debian/patches/00list
+    - deactivated patches
+
+ -- Torsten Marek <shlomme@debian.org>  Fri, 27 Mar 2009 15:11:57 +0100
+
+pyopengl (3.0.0~b6-3) unstable; urgency=low
+
+  [ Piotr Ożarowski ]
+  * Bump XS-Python-Version to >=2.4 (decorators issue, Closes: #505769)
+
+ -- Torsten Marek <shlomme@debian.org>  Thu, 27 Nov 2008 01:00:32 +0100
+
+pyopengl (3.0.0~b6-2) testing-proposed-updates; urgency=low
+
+  [ Sandro Tosi ]
+  * debian/control
+    - switch Vcs-Browser field to viewsvn
+
+  [ Torsten Marek ]
+  * Upload to testing-proposed-updates
+
+ -- Torsten Marek <shlomme@debian.org>  Wed, 12 Nov 2008 18:26:48 +0100
+
+pyopengl (3.0.0~b6-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Torsten Marek <shlomme@debian.org>  Thu, 23 Oct 2008 15:01:58 +0200
+
+pyopengl (3.0.0~b5-1) experimental; urgency=low
+
+  [Torsten Marek]
+  * New upstream release
+  * debian/patches
+   - removed 02_test_fix.dpatch, not needed anymore
+
+  [Andrea Gasparini]
+  * debian/rules
+    - Use dynamic pyversion for building docs.Don't use hardcoded
+      python2.5
+
+ -- Torsten Marek <shlomme@debian.org>  Tue, 12 Aug 2008 08:17:07 +0200
+
+pyopengl (3.0.0~b3-1) unstable; urgency=low
+
+  * New upstream release (Closes: #454988)
+  * debian/control
+    - update standard version to 3.8.0, no changes necessary
+    - change dependency on python-ctypes to
+      python-ctypes | python (>= 2.5) (Closes: #485594)
+    - only build-depend on python-dev, not python-all-dev
+  * Handle missing Togl module gracefully,
+    do not break the Python help system (Closes: #455896)
+
+ -- Torsten Marek <shlomme@debian.org>  Tue, 01 Jul 2008 17:25:00 +0200
+
+pyopengl (3.0.0~b1-2) unstable; urgency=low
+
+  * debian/rules
+    - remove special renaming of *.egg-info directory, is now
+      handled by python-central (Closes: #472042).
+  * debian/control
+    - depend on python-central >= 0.6.0
+  * debian/python-opengl-doc.doc-base
+    - change section to Programming/Python
+
+ -- Torsten Marek <shlomme@debian.org>  Fri, 21 Mar 2008 21:12:30 +0100
+
+pyopengl (3.0.0~b1-1) unstable; urgency=low
+
+  [ Piotr Ożarowski ]
+  * Homepage field added
+  * Rename XS-Vcs-* fields to Vcs-* (dpkg supports them now)
+
+  [ Sandro Tosi ]
+  * debian/watch
+    - added file
+  * debian/control
+    - uniforming Vcs-Browser field
+
+  [ Torsten Marek ]
+  * New upstream release.
+  * Added suggestion for libgle3
+  * Updated standards version to 3.7.3, no changes necessary.
+  * Added patch to remove setuptools-dependency on ctypes in setup.py
+  * Replace dependency on python-setuptools with
+    python-pkg-resources. (Closes: #468718)
+  * Documentation is not included in source package, is now
+    created during package build. Added build-dependencies
+    on GL (libgl1), GLU (libglu1), GLUT (freeglut3) and
+    GLE (libgle3) to make this possible.
+
+ -- Torsten Marek <shlomme@debian.org>  Sun, 02 Mar 2008 22:51:50 +0100
+
+pyopengl (3.0.0~a6-4) unstable; urgency=low
+
+  * Just suggest python-numpy, don't recommend it. (Closes: #435602)
+  * Acknowledge historical NMU. (Closes: #373547)
+
+ -- Torsten Marek <shlomme@debian.org>  Sun, 12 Aug 2007 14:06:11 +0200
+
+pyopengl (3.0.0~a6-3) unstable; urgency=low
+
+  * Promoted NumPy to a recommendation.
+  * Added python-tk to suggests.
+  * Depend on python-setuptools. (Closes: #435161)
+
+ -- Torsten Marek <shlomme@debian.org>  Fri, 27 Jul 2007 19:34:06 +0200
+
+pyopengl (3.0.0~a6-2) unstable; urgency=low
+
+  * Upload to unstable.
+  * Python 2.5 is supported now. (Closes: #430493)
+  * Acknowledge older NMU fixes.
+    Closes: #387930, #282896, #343207
+
+ -- Torsten Marek <shlomme@debian.org>  Wed, 13 Jun 2007 22:44:55 +0200
+
+pyopengl (3.0.0~a6-1) experimental; urgency=low
+
+  * New upstream 3.0.0a6 (Closes: #412374)
+  * Taken over package from Jamie Wilkinson. Thanks for the work!
+  * Added python-opengl-doc package with documentation
+
+ -- Torsten Marek <shlomme@debian.org>  Wed, 13 Jun 2007 21:31:45 +0200
+
+pyopengl (2.0.1.09.dfsg.1-0.3) unstable; urgency=low
+
+  * Porter NMU.
+  * Add support for GNU/kFreeBSD (Closes: #345218).
+
+ -- Aurelien Jarno <aurel32@debian.org>  Sun, 10 Dec 2006 23:07:36 +0100
+
+pyopengl (2.0.1.09.dfsg.1-0.2) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Applied patch directly in the source in order to avoid problems with
+    -rsudo. (Closes: #396703)
+
+ -- Ana Beatriz Guerrero Lopez <ana@debian.org>  Fri,  3 Nov 2006 06:50:38 +0100
+
+pyopengl (2.0.1.09.dfsg.1-0.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * New upstream version name for DFSG-free Debian version.  Note that this is
+    the same upstream version as previously, but with the undistributable font
+    removed and replaced with a symlink to Bitstream Vera Sans Italic.
+    (Closes: 393730)
+  * Bumped standards-version to 3.7.2, no changes required.
+  * Removed dh_python, not longer necessary.
+
+ -- Ana Beatriz Guerrero Lopez <ana@debian.org>  Sun, 29 Oct 2006 15:14:56 +0100
+
+pyopengl (2.0.1.09-2.3) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Remove build dependency on xvfb, makes pyopengl buildable
+    on s390 (Closes: #387930)
+  * Don't instantiate Tkinter.Tk in setup/togl_setup, modified
+    build scripts to work without it
+  * Bump debhelper compatibility level to 5
+  * Add debian/pycompat and build-depend on correct debhelper version
+
+ -- Torsten Marek <shlomme@debian.org>  Mon, 18 Sep 2006 20:33:43 +0200
+
+pyopengl (2.0.1.09-2.2) unstable; urgency=low
+
+  * NMU
+  * Convert to updated Python policy. Closes: #373547.
+  * Build-depend on libgle3-dev instead of libgle-dev.
+  * Apply patch to build on GNU/kFreeBSD (Aurelan Jarno). Closes: #345218.
+  * Fix package description: Closes: #370386.
+  * Do not compress example files. Closes: #282896
+  * Add build-conflict to python-numarray.
+
+ -- Matthias Klose <doko@debian.org>  Mon, 19 Jun 2006 22:51:25 +0000
+
+pyopengl (2.0.1.09-2.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Remove Build-Depends on non-existing xlibmesa-glu-dev.  (Closes: #363072)
+
+ -- Mohammed Adnène Trojette <adn+deb@diwi.org>  Sat, 27 May 2006 10:02:01 +0200
+
+pyopengl (2.0.1.09-2) unstable; urgency=low
+
+  * Acknowledge NMU.  Thanks Aurelien.  (Closes: #325606)
+  * Bump standards version to 3.6.2 (no further changes required).
+  * Change build dependency on python-dev to python2.3-dev.
+  * Add python2.4-opengl package to the build.  (Closes: #353597)
+
+ -- Jamie Wilkinson <jaq@debian.org>  Tue,  4 Apr 2006 14:58:28 +1000
+
+pyopengl (2.0.1.09-1.1) unstable; urgency=low
+
+  * NMU
+  * Don't build -2.1 and -2.2 packages as python2.1-numeric and
+    python2.2-numeric are not available anymore (closes: bug#325606).
+
+ -- Aurelien Jarno <aurel32@debian.org>  Thu, 20 Oct 2005 23:37:52 +0200
+
+pyopengl (2.0.1.09-1) unstable; urgency=low
+
+  * New upstream release.
+  * Acknowledge NMUs.  (Closes: #282942, #258480)
+  * Updated build dependencies for xlibmesa-dev split.
+  * Cleaned out version control files from the diff.
+  * Remove .cvsignore files from the packages.
+
+ -- Jamie Wilkinson <jaq@debian.org>  Sun, 24 Apr 2005 14:48:41 +1000
+
+pyopengl (2.0.1.08-5.1) unstable; urgency=low
+
+  * NMU.
+  * Removing USE_TCL_STUBS USE_TK_STUBS tests in togl_setup.py
+    (closes: #282942).
+
+ -- Paul Brossier <piem@altern.org>  Sun, 28 Nov 2004 16:01:32 +0000
+
+pyopengl (2.0.1.08-5) unstable; urgency=high
+
+  * Instead of sleeping, ask xvfb-run to use a new server number, so
+    that we aren't relying on each build daemon to be fast enough to
+    finish after N seconds.
+  * High urgency for the same reasons as before.
+
+ -- Jamie Wilkinson <jaq@debian.org>  Wed, 25 Aug 2004 11:54:10 +1000
+
+pyopengl (2.0.1.08-4) unstable; urgency=low
+
+  * Add terrible workaround for build errors by waiting 5 seconds after
+    a call to xvfb-run to make sure that the previous xvfb has quit.
+    Thanks to Kurt Roeckx.
+
+ -- Jamie Wilkinson <jaq@debian.org>  Mon, 16 Aug 2004 17:21:52 +1000
+
+pyopengl (2.0.1.08-3) unstable; urgency=medium
+
+  * Re-add dependency on xfonts-base so that xvfb-run will work.  Gah.
+    (Closes: #265923)
+  * Added build-dependency on python-numeric, as the reasons in #139270
+    no longer hold.
+
+ -- Jamie Wilkinson <jaq@debian.org>  Mon, 16 Aug 2004 08:17:36 +1000
+
+pyopengl (2.0.1.08-2) unstable; urgency=medium
+
+  * Added build dependency on xbase-clients so that xvfb-run will work.
+
+ -- Jamie Wilkinson <jaq@debian.org>  Sat, 14 Aug 2004 16:29:32 +1000
+
+pyopengl (2.0.1.08-1) unstable; urgency=medium
+
+  * New upstream stable bugfix release.
+    + Many awesome bugfixes made.
+    + Togl build improvements, -togl packages re-added.  (Closes: #253349)
+  * Add watch file from DEHS.
+  * Added suggests on python-tk, tcl, and tk as per the stable
+    python-opengl package.
+  * Medium urgency to get the togl support back into the archive.
+
+ -- Jamie Wilkinson <jaq@debian.org>  Sat, 14 Aug 2004 14:30:52 +1000
+
+pyopengl (2.0.0.44-5) unstable; urgency=low
+
+  * Changed dependency for latest python to python-dev.  (Closes: #263978)
+
+ -- Jamie Wilkinson <jaq@debian.org>  Wed, 11 Aug 2004 14:56:50 +1000
+
+pyopengl (2.0.0.44-4.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Build-Depends on python to fix FTBFS. (Closes: #258480)
+
+ -- Joshua Kwan <joshk@triplehelix.org>  Mon,  2 Aug 2004 09:37:32 -0700
+
+pyopengl (2.0.0.44-4) unstable; urgency=low
+
+  * python2.3-opengl replaces python-opengl.  (Closes: #252365)
+
+ -- Jamie Wilkinson <jaq@debian.org>  Thu,  3 Jun 2004 12:28:34 +1000
+
+pyopengl (2.0.0.44-3) unstable; urgency=low
+
+  * Updated section and priority to match overrides.
+
+ -- Jamie Wilkinson <jaq@debian.org>  Mon, 31 May 2004 11:57:19 +1000
+
+pyopengl (2.0.0.44-2) unstable; urgency=low
+
+  * Rewrote debian/rules for less suckage and great justice.
+    (Closes: #248629)
+  * Made python-opengl architecture all.
+  * Move the documentation and examples from /usr/lib/site-pacakges to
+    /usr/share/doc.
+
+ -- Jamie Wilkinson <jaq@debian.org>  Sun, 30 May 2004 20:13:46 +1000
+
+pyopengl (2.0.0.44-1) unstable; urgency=low
+
+  * New upstream release.  (Closes: #111372)
+  * Packages for each Python minor version.  (Closes: #152568)
+  * Source package name changed to that of upstream.
+  * Thanks to Thomas Wouters for work packaging this new version,
+    from whose packages I have based this new version on.  His
+    changes include:
+    + Fixing licence of togl packages.
+    + Updating description to be more informative.
+    + Replacing Togl-1.5 with Togl-1.6 (CVS 2002-01-30) for
+      tk8.4-compatibility.
+    + Fixing tk-include-path detection in setup/togl_setup.py.
+  * Bumped standards version.
+  * Depends on libgle-dev for the OpenGL.GLE module.
+
+ -- Jamie Wilkinson <jaq@debian.org>  Thu,  8 Apr 2004 16:17:07 +1000
+
+python-opengl (1.5.7-6) unstable; urgency=low
+
+  * Maintainer upload (closes: #111370, #130387, #118299, #199731, #177894, #158890, #140630, #112672, #205754, #139270)
+  * recompiled against new xrender (closes: #220818)
+  * remove old python1.5 precompiled files on upgrade (closes: #118450)
+
+ -- Enrique Zanardi <ezanard@debian.org>  Mon, 29 Dec 2003 15:51:28 +0000
+
+python-opengl (1.5.7-5.7) unstable; urgency=low
+
+  * NMU.
+  * Build for python2.3 (closes: #205754).
+  * Don't rely on working xvfb-run in buildd's (closes: #199731).
+
+ -- Matthias Klose <doko@debian.org>  Mon, 18 Aug 2003 08:02:36 +0200
+
+python-opengl (1.5.7-5.6) unstable; urgency=low
+
+  * NMU (make the upload for Thomas Wouters NMU).
+  * Don't compress the python examples, so you can run them in place.
+  * Update build dependency (glutg3-dev -> libglut3-dev).
+  * Change section from interpreters to python.
+  * Add build dependency on python-numeric.
+  * In the examples, use qualified instead of unqualified import.
+
+ -- Matthias Klose <doko@debian.org>  Wed, 14 May 2003 22:38:48 +0200
+
+python-opengl (1.5.7-5.5) unstable; urgency=medium
+
+  * Non maintainer upload.
+  * Replace modified Togl 1.5 with CVS snapshot of Togl 1.6 for compatiblity
+    with Tk 8.4 (Closes: #177894)
+
+ -- Thomas Wouters <thomas@xs4all.net>  Sun, 13 Apr 2003 19:32:29 +0200
+
+python-opengl (1.5.7-5.4) unstable; urgency=low
+
+  * Non maintainer upload.
+  * Update for python 2.2 being the standard python package. Without this
+    change python-gtkglarea can not be built.
+  * debian/rules: Fix invocation of dh_shlibdeps which put all depends in
+    the Suggests: field with current unstable.
+
+ -- Torsten Landschoff <torsten@debian.org>  Fri, 30 Aug 2002 14:29:26 +0200
+
+python-opengl (1.5.7-5.3) unstable; urgency=high
+
+  * Fixes FTBFS bug which is holding up other packages.
+  * debian/control: added dependency on xbase-clients so xvfb will work
+    (Closes: #140630)
+
+ -- Branden Robinson <branden@debian.org>  Mon, 15 Apr 2002 01:53:49 -0500
+
+python-opengl (1.5.7-5.2) unstable; urgency=low
+
+  * debian/control: added versioning to Build-Dependency on xvfb (>= 4.1.0-10)
+    for xvfb-run command
+  * debian/rules: use system's xvfb-run command
+  * debian/xvfb-run: removed; better version now exists in xvfb package
+  * Remove python-numeric dependency. (thanks, Eric Gillespie, Jr.)
+    (Closes: #139270)
+
+ -- Branden Robinson <branden@debian.org>  Thu, 21 Mar 2002 13:16:16 -0500
+
+python-opengl (1.5.7-5.1) unstable; urgency=low
+
+  * NMU to build with python (2.1) (closes #118299).
+  * Don't build python2-opengl anymore.
+  * Add postinst/prerm files to compile/remove *.py[co] files.
+  * Already fixed in 1.5.7-5: Closes: #112672
+  * Add python-numeric dependency.
+
+ -- Matthias Klose <doko@debian.org>  Mon,  5 Nov 2001 07:36:18 +0100
+
+python-opengl (1.5.7-5) unstable; urgency=low
+
+  * More changes in Build-Depens (Closes: Bug#117350). Thanks to
+    Jeff Licquia for his help.
+
+ -- Enrique Zanardi <ezanard@debian.org>  Tue, 30 Oct 2001 10:55:58 +0000
+
+python-opengl (1.5.7-4) unstable; urgency=low
+
+  * More xvfb-run tweaking. (Closes: Bug#116967)
+  * Changed the build-dependencies to take care of the python2
+    reorganization (Closes: Bug#117136)
+
+ -- Enrique Zanardi <ezanard@debian.org>  Fri, 26 Oct 2001 10:27:48 +0100
+
+python-opengl (1.5.7-3) unstable; urgency=low
+
+  * Change xvfb-run permissions on every Makefile rules to be able to build
+    the package. (Closes: Bug#116842)
+
+ -- Enrique Zanardi <ezanard@debian.org>  Wed, 24 Oct 2001 10:23:00 +0100
+
+python-opengl (1.5.7-2) unstable; urgency=low
+
+  * Applied patch to fix the build process (last one needed a few
+    tweaks). (Closes: Bug#110581)
+
+ -- Enrique Zanardi <ezanard@debian.org>  Tue, 23 Oct 2001 16:51:35 +0100
+
+python-opengl (1.5.7-1.1) unstable; urgency=low
+
+  * NMU.
+  * Fixed build process to use xvfb, so a real X server isn't
+    necessary for the build.  Closes: #110581.
+  * Fixed up Build-Depends to match what's needed for the above.
+
+ -- Jeff Licquia <jlicquia@progeny.com>  Fri, 19 Oct 2001 12:42:41 -0500
+
+python-opengl (1.5.7-1) unstable; urgency=low
+
+  * New upstream version
+  * Fixed link paths to Xlibs and Togl module. (Closes: Bug#101573)
+  * Added a build-dep on xserver. (Closes: Bug#94875, Bug#102326, Bug#104891)
+  * Provides a python2-opengl package. (Closes: Bug#102069)
+
+ -- Enrique Zanardi <ezanard@debian.org>  Sat, 25 Aug 2001 08:18:43 +0100
+
+python-opengl (1.5.6-2) unstable; urgency=low
+
+  * Added python-distutils to the Build-Depends. (Closes: Bug#92573)
+  * Downgraded dependency on tcl8.0 and tk8.0 to a suggestion.
+
+ -- Enrique Zanardi <ezanard@debian.org>  Sun, 15 Apr 2001 13:23:27 +0100
+
+python-opengl (1.5.6-1) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Enrique Zanardi <ezanard@debian.org>  Sun, 25 Mar 2001 13:54:08 +0100

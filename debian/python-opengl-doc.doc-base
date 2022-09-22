@@ -1,0 +1,13 @@
+Document: pyopengl
+Title: PyOpenGL API Documentation
+Author: Micheal C. Fletcher
+Abstract: A ctypes-based OpenGL wrapper for Python
+ This is the PyOpenGL 3.0.0 tree, it attempts to provide
+ a largely compatible API for code written with the 
+ PyOpenGL 2.x series using the ctypes foreign function 
+ interface system.
+Section: Programming/Python
+
+Format: HTML
+Index: /usr/share/doc/python-opengl-doc/documentation/pydoc/OpenGL.html
+Files: /usr/share/doc/python-opengl-doc/documentation/pydoc/*.html
