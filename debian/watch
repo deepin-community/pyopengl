@@ -1,6 +1,2 @@
-version=3
-
-opts=\
-dversionmangle=s/[~+]dfsg\d*//,\
-repacksuffix=+dfsg,\
- http://pypi.python.org/packages/source/P/PyOpenGL/PyOpenGL-([\d\.]*)\.tar\.gz
+version=4
+opts=dversionmangle=auto,repacksuffix=+dfsg,uversionmangle=s/(a|alpha|b|beta|c|dev|pre|rc)/~$1/ https://pypi.python.org/packages/source/P/PyOpenGL/ pyopengl-@ANY_VERSION@@ARCHIVE_EXT@

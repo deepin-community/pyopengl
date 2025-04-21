@@ -69,6 +69,7 @@ images.COMPONENT_COUNTS.update( {
 } )
 
 images.TYPE_TO_ARRAYTYPE.update( {
+    GL_3_0.GL_HALF_FLOAT : GL_3_0.GL_HALF_FLOAT,
     GL_1_2.GL_UNSIGNED_BYTE_3_3_2 : GL_1_1.GL_UNSIGNED_BYTE,
     GL_1_2.GL_UNSIGNED_BYTE_2_3_3_REV : GL_1_1.GL_UNSIGNED_BYTE,
     GL_1_2.GL_UNSIGNED_SHORT_4_4_4_4 : GL_1_1.GL_UNSIGNED_SHORT,
@@ -235,7 +236,7 @@ def _get_texture_level_dims(target,level):
         GL_1_1.glGetTexLevelParameteriv( target, level, GL_1_1.GL_TEXTURE_HEIGHT, dim )
         dims.append( dim.value )
         if target != GL_1_1.GL_TEXTURE_2D:
-            GL_1_1.glGetTexLevelParameteriv( target, level, GL_1_1.GL_TEXTURE_DEPTH, dim )
+            GL_1_1.glGetTexLevelParameteriv( target, level, GL_1_2.GL_TEXTURE_DEPTH, dim )
             dims.append( dim.value )
     return dims
 

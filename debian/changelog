@@ -1,3 +1,113 @@
+pyopengl (3.1.9+dfsg-1.1) unstable; urgency=medium
+
+  * Team upload.
+  * Do not run test_test_glgetfloat_leak in autopkgtest as it fails in riscv64
+    with python3-psutil 7 and prevents migration of it.
+
+ -- Thomas Goirand <zigo@debian.org>  Mon, 14 Apr 2025 15:08:48 +0200
+
+pyopengl (3.1.9+dfsg-1) unstable; urgency=medium
+
+  * s/watch: updated with the new sources filename
+  * New upstream version 3.1.9+dfsg
+  * d/p/*:
+    - removed, already applyed by upstream
+    - skip elg tests.
+  * d/control: Added python3-psutil <!nocheck> for tests
+  * d/control: Added libegl1
+  * Bug fix: "FTBFS: FAILED
+    tests/test_core.py::TestCore::test_glCallLists_twice2 -
+    AssertionError: 0", thanks to Santiago Vila (Closes: #1099270).
+
+ -- Picca Frédéric-Emmanuel <picca@debian.org>  Tue, 11 Mar 2025 09:17:29 +0100
+
+pyopengl (3.1.7+dfsg-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream version
+  * Rules-Requires-Root: no (routine-update)
+  * watch file standard 4 (routine-update)
+  * d/patches: All patches were upstreamed. so remove all of them.
+  * d/control: B-D pybuild-plugin-pyproject
+  * d/patches/0001-fix-Python3.12-tests.patch: Added to solved
+    - Bug fix: "FTBFS: dh_auto_test: error: pybuild --test --test-pytest -i
+      python{version} -p &quot;3.12 3.11&quot; returned exit code 13",
+      thanks to Lucas Nussbaum (Closes: #1058308).
+    - Bug fix: "pyopengl&#39;s autopkg tests fail with Python 3.12", thanks
+      to Matthias Klose (Closes: #1056440).
+  * Bug fix: "please run autopkg tests for all supported Python versions
+    before stopping", thanks to Matthias Klose (Closes: #1060252).
+
+ -- Picca Frédéric-Emmanuel <picca@debian.org>  Sun, 14 Jan 2024 15:31:59 +0100
+
+pyopengl (3.1.6+dfsg-4) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Steffen Moeller ]
+  * Bump standards version to 4.6.2 (no further changes required).
+
+  [ Sebastian Ramacher ]
+  * debian/control: Remove hard-coded dependency on libgl1-mesa-glx (Closes:
+    #1051599)
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Sun, 10 Sep 2023 15:50:58 +0200
+
+pyopengl (3.1.6+dfsg-3) unstable; urgency=medium
+
+  * Team upload.
+  * Eliminated lintian warnings
+    - d/watch: no dversionmangle
+    - d/copyright: short license empty
+  * Bringing PR#93 to debian/patches to have tests/check_glutinit
+    function on bookworm or newer.
+  * Cleaning PKG-INFO file create during build.
+
+ -- Steffen Moeller <moeller@debian.org>  Sat, 04 Feb 2023 23:23:04 +0000
+
+pyopengl (3.1.6+dfsg-2) unstable; urgency=medium
+
+  [ Sebastian Kuzminsky ]
+  * Team upload.
+  * Include a patch from Scott Talbert (Closes: #1029011).
+
+ -- Scott Talbert <swt@techie.net>  Thu, 26 Jan 2023 18:26:28 -0500
+
+pyopengl (3.1.6+dfsg-1) unstable; urgency=medium
+
+  * New upstream version 3.1.6+dfsg
+  * d/rules: Activated the unittest
+  * Use secure URI in Homepage field.
+  * Bug fix: "migrate to libglut3.12", thanks to Sebastian Ramacher
+    (Closes: #1023548).
+  * Added autopkgtests
+
+ -- Picca Frédéric-Emmanuel <picca@debian.org>  Tue, 15 Nov 2022 13:51:09 +0100
+
+pyopengl (3.1.5+dfsg-3) unstable; urgency=medium
+
+  [ Debian Janitor ]
+  * Use secure URI in debian/watch.
+  * Update standards version to 4.6.0, no changes needed.
+  * Update standards version to 4.6.1, no changes needed.
+
+ -- Jelmer Vernooĳ <jelmer@debian.org>  Mon, 17 Oct 2022 00:39:28 +0100
+
+pyopengl (3.1.5+dfsg-2) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * d/control: Update Maintainer field with new Debian Python Team
+    contact address.
+  * d/control: Update Vcs-* fields with new Debian Python Team Salsa
+    layout.
+
+  [ Debian Janitor ]
+  * Set upstream metadata fields: Repository.
+  * Bump debhelper from old 12 to 13.
+  * Update standards version to 4.5.1, no changes needed.
+
+ -- Sandro Tosi <morph@debian.org>  Tue, 14 Jun 2022 23:57:45 -0400
+
 pyopengl (3.1.5+dfsg-1) unstable; urgency=medium
 
   * Team upload.
