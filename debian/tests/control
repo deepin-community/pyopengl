@@ -1,0 +1,14 @@
+Tests: all-tests
+Depends:
+ mesa-utils,
+ libglvnd-dev,
+ python3-all,
+ python3-opengl,
+ python3-psutil,
+ python3-pygame,
+ python3-pytest,
+ python3-tk,
+ python3-xlib,
+ xauth,
+ xvfb,
+Restrictions: allow-stderr, skip-not-installable

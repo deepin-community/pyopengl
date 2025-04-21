@@ -13,7 +13,7 @@ Comment:
     THIS SOFTWARE IS NOT FAULT TOLERANT AND SHOULD NOT BE USED IN ANY
     SITUATION ENDANGERING HUMAN LIFE OR PROPERTY.
 Copyright: see below
-License:
+License: opengl-ctypes
  OpenGL-ctypes License
  .
     Copyright (c) 2005-2014, Michael C. Fletcher and Contributors

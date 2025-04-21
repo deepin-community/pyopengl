@@ -6,12 +6,12 @@ PyOpenGL is normally distributed via PyPI using standard pip::
     $ pip install PyOpenGL PyOpenGL_accelerate
 
 You can install this repository by branching/cloning and running
-setup.py::
+``pip``::
 
     $ cd pyopengl
-    $ python setup.py develop
+    $ pip install -e .
     $ cd accelerate
-    $ python setup.py develop
+    $ pip install -e .
 
 Note that to compile PyOpenGL_accelerate you will need to have 
 a functioning Python extension-compiling environment.
@@ -37,7 +37,7 @@ The `documentation pages`_ are useful for looking up the parameters and semantic
 PyOpenGL calls.
 
 .. _`tutorial page`: http://pyopengl.sourceforge.net/context/tutorials/index.html
-.. _`documentation pages`: http://pyopengl.sourceforge.net/documentation/
+.. _`documentation pages`: https://mcfletch.github.io/pyopengl/documentation/index.html
 
 
 Running Tests
@@ -63,7 +63,7 @@ numpy. Some will have accelerate, and some will not.
     :target: https://travis-ci.org/mcfletch/pyopengl
     :alt: Travis Tests
 
-.. image:: https://ci.appveyor.com/api/projects/status/MikeCFletcher/pyopengl/branch/master
+.. image:: https://ci.appveyor.com/api/projects/status/github/mcfletch/pyopengl
     :target: https://ci.appveyor.com/project/MikeCFletcher/pyopengl
     :alt: Appveyor Build
 

@@ -1,28 +1,48 @@
 Source: pyopengl
-Maintainer: Debian Python Modules Team <python-modules-team@lists.alioth.debian.org>
-Uploaders: Torsten Marek <shlomme@debian.org>
+Maintainer: Debian Python Team <team+python@tracker.debian.org>
+Uploaders:
+ Torsten Marek <shlomme@debian.org>,
 Section: python
 Priority: optional
-Build-Depends: debhelper-compat (= 12),
-               dh-python,
-               libosmesa6 <!nocheck>,
-               python3-all,
-               python3-setuptools,
-               xauth <!nocheck>,
-               xvfb <!nocheck>
-Standards-Version: 4.5.0
-Vcs-Browser: https://salsa.debian.org/python-team/modules/pyopengl
-Vcs-Git: https://salsa.debian.org/python-team/modules/pyopengl.git
-Homepage: http://pyopengl.sourceforge.net
+Build-Depends:
+ debhelper-compat (= 13),
+ dh-python,
+ dh-sequence-python3,
+ libegl1,
+ libgl1,
+ libglu1-mesa | libglu1,
+ pybuild-plugin-pyproject,
+ python3-all,
+ python3-psutil <!nocheck>,
+ python3-pygame <!nocheck>,
+ python3-pytest <!nocheck>,
+ python3-pytest-xvfb <!nocheck>,
+ python3-setuptools,
+ python3-tk <!nocheck>,
+ python3-xlib <!nocheck>,
+ xauth <!nocheck>,
+ xvfb <!nocheck>,
+Standards-Version: 4.6.2
+Vcs-Browser: https://salsa.debian.org/python-team/packages/pyopengl
+Vcs-Git: https://salsa.debian.org/python-team/packages/pyopengl.git
+Homepage: https://pyopengl.sourceforge.net
+Rules-Requires-Root: no
 
 Package: python3-opengl
 Architecture: all
-Depends: freeglut3,
-         libgl1-mesa-glx | libgl1,
-         libglu1-mesa | libglu1,
-         ${misc:Depends},
-         ${python3:Depends}
-Suggests: libgle3, python3-numpy, python3-tk
+Depends:
+ libegl1,
+ libgl1,
+ libglu1-mesa | libglu1,
+ libglut3.12,
+ ${misc:Depends},
+ ${python3:Depends},
+Recommends:
+ libglut-dev,
+Suggests:
+ libgle3,
+ python3-numpy,
+ python3-tk,
 Description: Python bindings to OpenGL (Python 3)
  PyOpenGL is a cross-platform open source Python binding to the standard
  OpenGL API providing 2D and 3D graphic drawing. PyOpenGL supports the
